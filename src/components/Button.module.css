@@ -1,7 +1,6 @@
 .Button{    
     margin: auto;
     margin-top: 12rem;
-    /* background-color: red; */
     display: flex;
     align-items: center;
     flex-direction: column;

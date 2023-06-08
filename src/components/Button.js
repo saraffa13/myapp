@@ -9,6 +9,7 @@ const Button = () => {
     const[colorBool,setColorBool] = useState(false);
 
     const [randomColor, setRandomColor] = useState('#14BDAD');
+    const [randomColor2, setRandomColor2] = useState('#FCC200');
 
     const generateRandomColor = () => {
         const color = '#' + Math.floor(Math.random() * 16777215).toString(16);
@@ -17,6 +18,8 @@ const Button = () => {
 
     const counterIncrementer = () => {
         setCount(count=>count+10);
+        const color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+        setRandomColor2(color);
     }
     const colorChanger = () => {
         setColorBool(colorBool=>!colorBool);
@@ -26,7 +29,11 @@ const Button = () => {
     return (
         <div className={classes.Button}>
             <div className={classes.circleHolder}>
-                <div className={classes.circle} onClick={counterIncrementer}>
+                <div className={classes.circle} 
+                style={{
+                    backgroundColor: randomColor2
+                }} 
+                onClick={counterIncrementer}>
                     <Cendol count={count}/>
                     <div className={classes.counterIncrementer}>Click to increase counter</div>
                 </div>
